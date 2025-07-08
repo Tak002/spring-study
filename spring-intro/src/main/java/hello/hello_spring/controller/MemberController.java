@@ -40,7 +40,6 @@ public class MemberController {
     public String create(MemberForm memberForm){
         Member member=new Member();
         member.setName(memberForm.getName());
-        System.out.println("Name" + memberForm.getName());
         memberService.join(member);
         return "redirect:/";
     }
