@@ -1,11 +1,17 @@
 package hello.core.member;
 
+import hello.core.Appconfig;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class MemeberServiceTest {
-    //OCP, DIP 위반: MemberServiceImpl을 알고있어야하며, MemberService의 구현체가 변경되면 이 코드도 수정되야함
-    MemberService memberService =  new MemberServiceImpl();
+    MemberService memberService;
+    @BeforeEach
+    public void setup() {
+        Appconfig appconfig = new Appconfig();
+        this.memberService = appconfig.memberService();
+    }
 
     @Test
     void joinTest(){
