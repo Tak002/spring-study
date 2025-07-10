@@ -1,6 +1,6 @@
 package hello.core.member;
 
-import hello.core.Appconfig;
+import hello.core.AppConfig;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,7 +9,7 @@ public class MemeberServiceTest {
     MemberService memberService;
     @BeforeEach
     public void setup() {
-        Appconfig appconfig = new Appconfig();
+        AppConfig appconfig = new AppConfig();
         this.memberService = appconfig.memberService();
     }
 

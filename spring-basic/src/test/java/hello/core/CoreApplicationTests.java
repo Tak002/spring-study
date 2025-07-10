@@ -10,4 +10,9 @@ class CoreApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	void getAllbeans(){
+
+	}
+
 }

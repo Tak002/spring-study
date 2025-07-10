@@ -1,12 +1,16 @@
 package hello.core.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberServiceImpl implements MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberServiceImpl(MemberRepository memberRepository) {
-        //OCP, DIP 위반: MemoryMemberRepository를 알고 있어야 하며, MemoryRepository의 구현체가 바뀔 경우 이 코드도 수정 되야 함
-        // 추상화(MemberRepository)에도 의존 하고, 구현체(MemoryMemberRepository)에도 의존함
         this.memberRepository = memberRepository;
     }
 
@@ -18,5 +22,10 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public Member findMember(Long memberId) {
         return  memberRepository.findById(memberId);
+    }
+
+    //test용
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
     }
 }
