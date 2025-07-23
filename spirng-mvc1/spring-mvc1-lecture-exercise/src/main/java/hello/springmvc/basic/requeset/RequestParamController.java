@@ -1,15 +1,13 @@
-package hello.springmvc.requeset;
+package hello.springmvc.basic.requeset;
 
+import hello.springmvc.basic.HelloData;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.bind.DefaultValue;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -88,6 +86,20 @@ public class RequestParamController {
         List<Object> age = map.get("age");
 
         log.info("username={}, age={}",username,age);
+        return "ok";
+    }
+
+    @ResponseBody
+    @RequestMapping("/model-attribute-v1")
+    public String modelAttributeV1(@ModelAttribute HelloData helloData,@RequestParam int age){
+        log.info(helloData.toString());
+        return "ok";
+    }
+
+    @ResponseBody
+    @RequestMapping("/model-attribute-v2")
+    public String modelAttributeV2(HelloData helloData){
+        log.info(helloData.toString());
         return "ok";
     }
 }

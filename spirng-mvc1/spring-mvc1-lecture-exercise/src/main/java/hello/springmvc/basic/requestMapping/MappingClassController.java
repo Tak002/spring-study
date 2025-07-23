@@ -1,4 +1,4 @@
-package hello.springmvc.requestMapping;
+package hello.springmvc.basic.requestMapping;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

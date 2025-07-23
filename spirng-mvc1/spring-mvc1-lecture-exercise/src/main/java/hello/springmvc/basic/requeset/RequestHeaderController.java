@@ -1,4 +1,4 @@
-package hello.springmvc.requeset;
+package hello.springmvc.basic.requeset;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
