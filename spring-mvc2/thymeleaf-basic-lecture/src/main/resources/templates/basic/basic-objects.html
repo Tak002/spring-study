@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li th:text="${#locale}"></li>
+</ul>
+
+<ul>
+    <li th:text="param.paramData"></li>
+    <li th:text="session.sessionData"></li>
+    <li th:text="${@helloBean.hello('helloData')}"></li>
+</ul>
+</body>
+</html>

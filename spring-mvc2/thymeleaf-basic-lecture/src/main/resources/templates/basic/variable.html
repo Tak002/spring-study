@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<li><span th:text="${userA}"> 기본 user 값</span></li>
+<li><span th:text="${userA.age}"> 기본 user 값</span></li>
+<li><span th:text="${userA.username}"> 기본 user 값</span></li>
+<li><span th:text="${userA['username']}"> 기본 user 값</span></li>
+<li><span th:text="${userA.getUsername()}"> 기본 user 값</span></li>
+
+<li><span th:text="${users[0]}"> 기본 user 값</span></li>
+<li><span th:text="${users[0].age}"> 기본 user 값</span></li>
+<li><span th:text="${users[0].username}"> 기본 user 값</span></li>
+<li><span th:text="${users[0]['username']}"> 기본 user 값</span></li>
+
+<li><span th:text="${userMap['userA']}"> 기본 user 값</span></li>
+<li><span th:text="${userMap['userA'].age}"> 기본 user 값</span></li>
+<li><span th:text="${userMap['userA'].username}"> 기본 user 값</span></li>
+<li><span th:text="${userMap['userA']['username']}"> 기본 user 값</span></li>
+
+
+<div th:with="first=${users[0]}">
+    <p>
+        첫번쨰 사람은
+        <span th:text="${first.username}"></span>
+    </p>
+</div>
+
+</body>
+</html>
